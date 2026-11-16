@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reserva de Horas Médicas | Clínica Salud Integral</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="encabezado">
+    <div class="contenedor">
+      <h1>Clínica Salud Integral</h1>
+      <p>Plataforma web de reserva de horas médicas</p>
+    </div>
+  </header>
+
+  <main class="contenedor grilla">
+    <section class="tarjeta" aria-labelledby="titulo-reserva">
+      <h2 id="titulo-reserva">Reserva tu hora</h2>
+      <p class="aviso">Formulario de demostración: los datos no se envían ni se almacenan. No ingreses información personal real.</p>
+
+      <form id="form-reserva" action="#" method="post" autocomplete="off">
+        <label for="nombre">Nombre del paciente</label>
+        <input type="text" id="nombre" name="nombre" placeholder="Ej: Paciente de prueba" required>
+
+        <label for="correo">Correo de contacto</label>
+        <input type="email" id="correo" name="correo" placeholder="paciente@ejemplo.cl" required>
+
+        <label for="especialidad">Especialidad</label>
+        <select id="especialidad" name="especialidad" required>
+          <option value="">Selecciona una especialidad</option>
+          <option>Medicina general</option>
+          <option>Pediatría</option>
+          <option>Cardiología</option>
+          <option>Dermatología</option>
+          <option>Traumatología</option>
+        </select>
+
+        <div class="fila">
+          <div>
+            <label for="fecha">Fecha</label>
+            <input type="date" id="fecha" name="fecha" required>
+          </div>
+          <div>
+            <label for="hora">Hora</label>
+            <select id="hora" name="hora" required>
+              <option value="">Hora</option>
+              <option>09:00</option>
+              <option>10:00</option>
+              <option>11:00</option>
+              <option>12:00</option>
+              <option>15:00</option>
+              <option>16:00</option>
+            </select>
+          </div>
+        </div>
+
+        <label for="prevision">Previsión</label>
+        <select id="prevision" name="prevision">
+          <option>Fonasa</option>
+          <option>Isapre</option>
+          <option>Particular</option>
+        </select>
+
+        <button type="submit">Solicitar reserva</button>
+        <p id="mensaje" class="mensaje" role="status" hidden>Solicitud simulada registrada. En un sistema real recibirías una confirmación por correo.</p>
+      </form>
+    </section>
+
+    <aside>
+      <section class="tarjeta" aria-labelledby="titulo-atencion">
+        <h2 id="titulo-atencion">Datos generales de atención</h2>
+        <ul class="lista">
+          <li><strong>Horario:</strong> lunes a viernes de 08:30 a 18:00</li>
+          <li><strong>Sábados:</strong> 09:00 a 13:00</li>
+          <li><strong>Dirección:</strong> Av. Ejemplo 123, Santiago (ficticia)</li>
+          <li><strong>Mesa de ayuda:</strong> +56 2 0000 0000 (ficticio)</li>
+          <li><strong>Llegada:</strong> presentarse 15 minutos antes de la hora</li>
+        </ul>
+      </section>
+
+      <section class="tarjeta" aria-labelledby="titulo-estado">
+        <h2 id="titulo-estado">Estado del servicio</h2>
+        <p class="estado"><span class="punto" aria-hidden="true"></span> Servicio operativo</p>
+        <table class="tabla-estado">
+          <tr><th>Versión</th><td>1.0.0</td></tr>
+          <tr><th>Entorno</th><td>Local (Docker Desktop)</td></tr>
+          <tr><th>Servidor</th><td>Nginx (nginx:alpine)</td></tr>
+          <tr><th>Puerto local</th><td>8080</td></tr>
+          <tr><th>Health check</th><td><a href="/health">/health</a></td></tr>
+        </table>
+      </section>
+    </aside>
+  </main>
+
+  <footer class="pie">
+    <p>Proyecto académico DevOps · IACC 2026 · Servicio simulado sin base de datos ni API</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
